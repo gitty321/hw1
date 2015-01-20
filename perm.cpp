@@ -1,3 +1,7 @@
+/**
+ * Code to generate all permutations of a string of characters
+ */
+
 #include <iostream>
 #include <cstring>
 
@@ -8,26 +12,32 @@ using namespace std;
 void all_perms(char *src_chars, char* buf);
 
 // This is where we'll do the work
-void perm_helper(char *src_chars, char* buf, int curr);
+void perm_helper(char *src_chars, char* buf, int curr, int count);
 
 // Invokes the helper
 void all_perms(char *src_chars, char* buf)
 {
-  perm_helper(src_chars, buf, 0);
+  perm_helper(src_chars, buf, 0, 0);
 }
 
 // Iterates through all possible characters for the 'curr' location
 // which are characters not previously used earlier in buf
-void perm_helper(char *src_chars, char* buf, int curr)
+void perm_helper(char *src_chars, char* buf, int curr, int count)
 {
-  if(buf[curr] == '\0'){
+  if(buf[curr] == '\0' && strchr(buf, ' ') != NULL) {
+  }
+  else if(buf[curr] == '\0'){
     cout << buf << endl;
   }
   else {
     int len = strlen(src_chars);
+    int counter = count;
     for(int i=0; i < len; i++){
-      buf[curr] = src_chars[i];
-      perm_helper(src_chars, buf, curr+1);
+    	if (strchr(buf, src_chars[i]) == NULL)
+    	{
+    		buf[curr] = src_chars[i];
+    	}
+      perm_helper(src_chars, buf, curr+1, counter);
       buf[curr] = ' ';
     }
   }

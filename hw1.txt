@@ -12,9 +12,20 @@ Problem 1:
 3. Eclipse
 4. vim
 5. Microsoft Visual Studio
+7. Sublime
 
-c. : What is the late submission policy?
-3. Each student can submit up to 3 homeworks a day late for full credit.
+(c): What is the late submission policy?
+3. Each student cn use up to 2 of their 4 grace days on a single assignment.
 
-(d): Is there a grace period to submit assignments?
-2. There is an hour grace period per assignment for 50% credit.
+(d): If using a grace day(s) you should commit your code via Github and then...
+4. Fill in a Late Submission Google Form
+
+Problem 2
+(a): Which of the following git user interfaces are accepted and supported in this course?
+2. GitHub Desktop Client
+3. Terminal (Mac or Linux)
+
+(b): 1. git add hw1q2b.cpp
+2. git log -p -3
+
+(c): git will prompt the user to enter a commit message
